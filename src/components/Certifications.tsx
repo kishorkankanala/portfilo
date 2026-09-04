@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { certificationsList } from '../data/portfolioData';
 import { Certification } from '../types';
-import { Award, CheckCircle2, ExternalLink, ShieldCheck, Sparkles } from 'lucide-react';
+import { Award, CheckCircle2, ExternalLink, ShieldCheck } from 'lucide-react';
 
 export const Certifications: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null);

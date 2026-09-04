@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Sparkles, X } from 'lucide-react';
+import { CheckCircle2, X } from 'lucide-react';
 
 interface ToastProps {
   message: string | null;
@@ -16,7 +16,7 @@ export const Toast: React.FC<ToastProps> = ({ message, onClose }) => {
       role="alert"
     >
       <div className="p-1.5 rounded-lg bg-[#ff4b22]/20 text-[#ff4b22] shrink-0">
-        <Sparkles className="w-4 h-4" />
+        <CheckCircle2 className="w-4 h-4" />
       </div>
       <p className="text-xs sm:text-sm font-medium flex-1 text-white/90">
         {message}

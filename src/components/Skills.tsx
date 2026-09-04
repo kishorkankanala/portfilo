@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { skillCategories } from '../data/portfolioData';
-import { Code2, Globe, Database, Brain, Wrench, Sparkles } from 'lucide-react';
+import { Code2, Globe, Database, Brain, Wrench, Cpu } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
@@ -18,7 +18,7 @@ export const Skills: React.FC = () => {
       case 'build':
         return <Wrench className="w-8 h-8 text-[#ff4b22]" />;
       default:
-        return <Sparkles className="w-8 h-8 text-[#ff4b22]" />;
+        return <Cpu className="w-8 h-8 text-[#ff4b22]" />;
     }
   };
 
@@ -35,7 +35,7 @@ export const Skills: React.FC = () => {
       {/* Section Header */}
       <div className="text-center space-y-3 mb-12">
         <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#ff4b22]">
-          <Sparkles className="w-4 h-4" />
+          <Cpu className="w-4 h-4" />
           <span>Core Capabilities</span>
         </div>
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">

@@ -1,4 +1,14 @@
-import { Project, EducationItem, SkillCategory, Certification, ContactInfo } from '../types';
+import {
+  Project,
+  EducationItem,
+  SkillCategory,
+  Certification,
+  ContactInfo,
+  ProcessStep,
+  DetailedSkillCategory,
+  SoftSkill,
+  ExperienceItem
+} from '../types';
 
 export const personalDetails = {
   name: "Karthik Venkat Bhavani Kishor Kankanala",
@@ -8,6 +18,7 @@ export const personalDetails = {
     "Computer Science Engineer",
     "AI Enthusiast"
   ],
+  introAudioText: "Hi, I'm Kishor. I'm a full stack developer and computer science student passionate about building fast, scalable applications and intelligent AI solutions. Welcome to my portfolio!",
   bio: "I build fast, scalable applications using Java, Spring Boot, modern frontend technologies, and Python. Turning complex problems into elegant, high-performance solutions.",
   about: "I am a dedicated Computer Science Engineering student with a strong passion for Full Stack Development, Artificial Intelligence, and Machine Learning. I enjoy solving complex problems, building intelligent systems, and continuously exploring modern technologies to create scalable and efficient applications.",
   avatarUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAsAGknrrNUnQZrrXRJ4ilFqeDqlP9hge22Xf24s1k2kWZaljMfW3FMdj7QXyyWTMMEtqTWTUhz6CQ7nWwf6gxq9x-r76GAkEZdc6ix6Z_x1GFjxbDgAzS0hfZP11E5ROiLSHrnDmNYytK10bwE2r6NpR3i3G4peadCeoS1CxIuV5RcKMmuvYKhF5kwB3lpAW1pe06Y_0hbLCwJPH0DzE5jKq-nvJ5A2soIn9ChKACQH76j66kYmcTbb5BTmxkGVXWnoQ",
@@ -21,13 +32,159 @@ export const personalDetails = {
   }
 };
 
+export const processSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Research",
+    description: "Exploring problem scopes, user requirements, and technical feasibility to lay a solid foundation for the architecture.",
+    color: "bg-[#ff4b22]"
+  },
+  {
+    number: "02",
+    title: "Design",
+    description: "Crafting clean architecture, intuitive wireframes, and scalable database schemas for smooth interaction and maintainability.",
+    color: "bg-[#1e1e1e]"
+  },
+  {
+    number: "03",
+    title: "Develop",
+    description: "Building robust backends and responsive frontend interfaces using modern frameworks, clean code practices, and security standards.",
+    color: "bg-[#ff4b22]"
+  },
+  {
+    number: "04",
+    title: "Deploy",
+    description: "Rigorous testing, performance optimization, cloud deployment, and continuous monitoring to ensure high reliability.",
+    color: "bg-[#1e1e1e]"
+  }
+];
+
+export const detailedSkillCategories: DetailedSkillCategory[] = [
+  {
+    title: "PROGRAMMING LANGUAGES",
+    skills: [
+      { name: "Java", level: 90 },
+      { name: "Python", level: 88 },
+      { name: "C++", level: 82 },
+      { name: "C", level: 80 }
+    ]
+  },
+  {
+    title: "FULL STACK",
+    skills: [
+      { name: "ReactJS", level: 88 },
+      { name: "Tailwind CSS", level: 92 },
+      { name: "HTML / CSS", level: 95 },
+      { name: "JavaScript / TypeScript", level: 86 }
+    ]
+  },
+  {
+    title: "BACKEND & FRAMEWORKS",
+    skills: [
+      { name: "Spring Boot", level: 85 },
+      { name: "FastAPI / Flask", level: 82 },
+      { name: "REST APIs", level: 90 },
+      { name: "Microservices", level: 78 }
+    ]
+  },
+  {
+    title: "DATABASES",
+    skills: [
+      { name: "MySQL", level: 86 },
+      { name: "PostgreSQL", level: 82 },
+      { name: "MongoDB", level: 78 },
+      { name: "Database Design", level: 84 }
+    ]
+  },
+  {
+    title: "TOOLS & AI/ML",
+    skills: [
+      { name: "Git & GitHub", level: 90 },
+      { name: "YOLOv8 & OpenCV", level: 85 },
+      { name: "Scikit-Learn & Pandas", level: 86 },
+      { name: "VS Code & Linux", level: 88 }
+    ]
+  },
+  {
+    title: "COMPUTER SCIENCE CONCEPTS",
+    skills: [
+      { name: "Data Structures", level: 88 },
+      { name: "Algorithms", level: 85 },
+      { name: "DBMS", level: 87 },
+      { name: "OOP & Cryptography", level: 89 }
+    ]
+  }
+];
+
+export const softSkillsList: SoftSkill[] = [
+  {
+    title: "LEADERSHIP",
+    description: "Guiding teams, mentoring peers, and driving projects towards completion with structured vision."
+  },
+  {
+    title: "PUBLIC SPEAKING",
+    description: "Confident stage presentations, technical symposiums, and conveying complex ideas concisely."
+  },
+  {
+    title: "TEAM COLLABORATION",
+    description: "Thriving in agile sprints, cross-functional code reviews, and positive engineering culture."
+  },
+  {
+    title: "COMMUNICATION",
+    description: "Clear, concise, and structured written and verbal documentation of code and architectures."
+  },
+  {
+    title: "PROBLEM SOLVING",
+    description: "Breaking down complex bottlenecks into clean, logical algorithmic building blocks."
+  },
+  {
+    title: "ADAPTABILITY",
+    description: "Quick to pick up modern frameworks, libraries, and best practices seamlessly."
+  },
+  {
+    title: "CREATIVITY",
+    description: "Blending visual polish with high performance to craft memorable user interactions."
+  },
+  {
+    title: "TIME MANAGEMENT",
+    description: "Balancing strict deadlines, sprint priorities, and code quality systematically."
+  }
+];
+
+export const experienceList: ExperienceItem[] = [
+  {
+    id: "hackathon",
+    role: "Hackathon Finalist & Developer",
+    organization: "Technical Symposium & Coding Competitions",
+    period: "2023 - 2024",
+    type: "HACKATHON",
+    description: "Architected end-to-end full stack prototypes in 36-hour intense hackathons, presenting to industry judges and winning accolades."
+  },
+  {
+    id: "lead",
+    role: "Student Technical Coordinator",
+    organization: "Dhanekula Institute of Engineering & Technology",
+    period: "2023 - Present",
+    type: "LEADERSHIP",
+    description: "Organized coding bootcamps, managed technical workshops for 200+ students, and coordinated peer programming mentoring sessions."
+  },
+  {
+    id: "research-proj",
+    role: "Cryptographic Systems & ML Researcher",
+    organization: "Academic Research Lab",
+    period: "2024",
+    type: "RESEARCH",
+    description: "Developed privacy-preserving homomorphic e-voting architecture and deep learning aerial wildlife detection pipeline."
+  }
+];
+
 export const educationList: EducationItem[] = [
   {
     id: "btech",
     degree: "B.Tech in Computer Science and Engineering",
     institution: "Dhanekula Institute of Engineering and Technology",
-    details: "CGPA: 7.8 | Expected Graduation: 2025",
-    year: "Expected Graduation: 2025",
+    details: "CGPA: 7.8 | Expected Graduation: 2026",
+    year: "Expected Graduation: 2026",
     score: "CGPA: 7.8",
     highlights: [
       "Core coursework in Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks & AI.",
@@ -50,8 +207,8 @@ export const educationList: EducationItem[] = [
     id: "ssc",
     degree: "Secondary School Certificate (SSC)",
     institution: "Geethanjali High School",
-    details: "Completed: 2019",
-    year: "Completed: 2019",
+    details: "Completed: 2020",
+    year: "Completed: 2020",
     highlights: [
       "Comprehensive high school curriculum with distinction in Science and Mathematics.",
       "Participated in school science exhibitions and leadership activities."
@@ -100,7 +257,7 @@ export const projectsList: Project[] = [
     description: "A secure electronic voting system leveraging homomorphic encryption to ensure vote privacy and tallying accuracy without decrypting individual ballots. Utilized Paillier cryptosystem for additive homomorphic properties.",
     tags: ["Python", "Cryptography", "Paillier", "Privacy Preserving"],
     icon: "how_to_vote",
-    githubUrl: "https://github.com/kankanala-kishor/homomorphic-evoting-system",
+    githubUrl: "https://github.com/kishorkankanala/homomorphic-evoting-system",
     details: {
       problem: "Traditional electronic voting systems risk compromising ballot secrecy when tallying or requiring centralized decryption authorities vulnerable to insider threats.",
       solution: "Engineered an end-to-end encrypted voting pipeline using the Paillier cryptosystem where encrypted ballots are aggregated homomorphically. The final tally is decrypted without revealing any single voter's ballot.",
@@ -138,7 +295,7 @@ print(f"Verified Final Tally: {tally}")`
     description: "An intelligent recommendation engine utilizing K-Means clustering algorithm on Zomato dataset to suggest dining options based on user preferences and location data. Optimized cluster count using the Elbow Method and Silhouette Analysis.",
     tags: ["Machine Learning", "K-Means", "Python", "Data Science"],
     icon: "restaurant",
-    githubUrl: "https://github.com/kankanala-kishor/restaurant-recommendation-engine",
+    githubUrl: "https://github.com/kishorkankanala/restaurant-recommendation-engine",
     details: {
       problem: "Diners face decision paralysis when browsing through thousands of heterogeneous restaurant listings with varied cuisines, pricing tiers, and ratings.",
       solution: "Constructed a multi-dimensional recommendation pipeline incorporating user rating profiles, location coordinates, cost for two, and TF-IDF cuisine vectorization with K-Means clustering to yield hyper-relevant suggestions.",
@@ -174,7 +331,7 @@ print(f"Optimal cluster partition silhouette: {score:.3f}")`
     description: "A deep learning vision system employing YOLOv8 and OpenCV to accurately detect and classify wildlife from aerial imagery, aiding in conservation efforts. Integrated altitude-aware scaling for precise bounding box estimation in drone footage.",
     tags: ["YOLOv8", "OpenCV", "Deep Learning", "Drone Vision"],
     icon: "nature",
-    githubUrl: "https://github.com/kankanala-kishor/aerial-wildlife-detection-yolov8",
+    githubUrl: "https://github.com/kishorkankanala/aerial-wildlife-detection-yolov8",
     details: {
       problem: "Manual wildlife tracking in vast forest reserves and savannahs via aerial drone surveys is tedious, error-prone, and struggles with small animal footprints at high altitudes.",
       solution: "Trained and fine-tuned a custom YOLOv8 object detection model on high-resolution aerial datasets with multi-scale feature pyramids, data augmentations (mosaic, rotation, blur), and altitude-compensation bounding scaling.",
@@ -261,8 +418,8 @@ export const contactData: ContactInfo = {
   phone: "+919398431347",
   displayPhone: "9398431347",
   email: "kishorkankanala82@gmail.com",
-  linkedin: "https://linkedin.com/in/kankanala-kishor",
-  linkedinDisplay: "linkedin.com/in/kankanala-kishor",
-  github: "https://github.com/kankanala-kishor",
+  linkedin: "https://www.linkedin.com/in/kankanala-kishor-12b10a25b/",
+  linkedinDisplay: "linkedin.com/in/kankanala-kishor-12b10a25b",
+  github: "https://github.com/kishorkankanala",
   location: "Vijayawada, Andhra Pradesh, India"
 };

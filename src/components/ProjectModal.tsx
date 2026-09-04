@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
-import { X, Code2, ExternalLink, Check, Copy, Sparkles, Layers, Cpu, Database } from 'lucide-react';
+import { X, Code2, ExternalLink, Check, Copy, Layers, Cpu, Database, CheckCircle2 } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -71,7 +71,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
             <div className="p-5 rounded-xl bg-white/[0.03] border border-white/5 space-y-2">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#ffb4a3] flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-[#ff4b22]" /> Architectural Solution
+                <Layers className="w-4 h-4 text-[#ff4b22]" /> Architectural Solution
               </h4>
               <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
                 {project.details.solution}

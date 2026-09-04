@@ -50,15 +50,22 @@ export const Education: React.FC = () => {
                 <div className="bento-card p-6 sm:p-7 rounded-2xl ml-6 sm:ml-8 transition-all duration-300">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-display text-lg sm:text-xl font-bold text-white group-hover:text-[#ff4b22] transition-colors">
-                        {item.degree}
-                      </h3>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-display text-lg sm:text-xl font-bold text-white group-hover:text-[#ff4b22] transition-colors">
+                          {item.degree}
+                        </h3>
+                        {item.score && (
+                          <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#ff4b22]/15 text-[#ff4b22] border border-[#ff4b22]/30">
+                            {item.score}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-[#ff4b22] text-sm sm:text-base font-semibold mt-1">
                         {item.institution}
                       </p>
-                      <p className="text-white/60 text-xs sm:text-sm mt-2 flex items-center gap-2 font-medium">
+                      <p className="text-white/70 text-xs sm:text-sm mt-2 flex items-center gap-2 font-medium">
                         <Calendar className="w-3.5 h-3.5 text-[#ff4b22]" />
-                        <span>{item.details}</span>
+                        <span>{item.year}</span>
                       </p>
                     </div>
 

@@ -93,6 +93,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                 <a href={contactData.linkedin} target="_blank" rel="noreferrer" className="hover:underline">{contactData.linkedinDisplay}</a>
               </span>
               <span className="flex items-center gap-1.5">
+                <Github className="w-3.5 h-3.5 text-[#ff4b22]" />
+                <a href={contactData.github} target="_blank" rel="noreferrer" className="hover:underline">github.com/kishorkankanala</a>
+              </span>
+              <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-[#ff4b22]" />
                 <span>{contactData.location}</span>
               </span>

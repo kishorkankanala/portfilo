@@ -44,6 +44,37 @@ export interface Certification {
   badgeType: string;
 }
 
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+  color?: string;
+}
+
+export interface DetailedSkill {
+  name: string;
+  level: number;
+}
+
+export interface DetailedSkillCategory {
+  title: string;
+  skills: DetailedSkill[];
+}
+
+export interface SoftSkill {
+  title: string;
+  description: string;
+}
+
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  organization: string;
+  period: string;
+  type: string;
+  description: string;
+}
+
 export interface ContactInfo {
   phone: string;
   displayPhone: string;
