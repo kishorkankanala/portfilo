@@ -2,6 +2,7 @@ import React from 'react';
 import { projectsList } from '../data/portfolioData';
 import { Project } from '../types';
 import { Code2, ExternalLink, Vote, Utensils, Trees, Layers, ArrowUpRight } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 interface ProjectsProps {
   onSelectProject: (project: Project) => void;
@@ -28,15 +29,17 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
       className="py-20 md:py-28 relative"
     >
       {/* Section Header */}
-      <div className="text-center space-y-3 mb-16">
-        <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#ff4b22]">
-          <Layers className="w-4 h-4" />
-          <span>Selected Portfolio</span>
+      <ScrollReveal>
+        <div className="text-center space-y-3 mb-16">
+          <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#ff4b22]">
+            <Layers className="w-4 h-4" />
+            <span>Selected Portfolio</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Featured Work
+          </h2>
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-          Featured Work
-        </h2>
-      </div>
+      </ScrollReveal>
 
       {/* Projects List */}
       <div className="space-y-12 max-w-6xl mx-auto">
@@ -44,11 +47,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
           const isEven = index % 2 === 1; // Project 02 has content on left, visual on right
 
           return (
-            <div
-              key={project.id}
-              id={`project-card-${project.id}`}
-              className="bento-card rounded-2xl overflow-hidden group transition-all duration-500"
-            >
+            <ScrollReveal key={project.id}>
+              <div
+                id={`project-card-${project.id}`}
+                className="bento-card rounded-2xl overflow-hidden group transition-all duration-500"
+              >
               <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[380px]">
                 {/* Visual Art Box Column */}
                 <div
@@ -129,6 +132,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           );
         })}
       </div>

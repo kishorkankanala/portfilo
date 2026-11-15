@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { certificationsList } from '../data/portfolioData';
 import { Certification } from '../types';
 import { Award, CheckCircle2, ExternalLink, ShieldCheck } from 'lucide-react';
@@ -57,57 +58,59 @@ export const Certifications: React.FC = () => {
       </div>
 
       {/* Certification Details Modal */}
-      {selectedCert && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
-          onClick={() => setSelectedCert(null)}
-        >
+      {selectedCert &&
+        createPortal(
           <div
-            className="bg-[#141414] border border-[#ff4b22]/40 rounded-2xl p-7 max-w-md w-full text-left shadow-2xl relative"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
+            onClick={() => setSelectedCert(null)}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-xl bg-[#ff4b22]/15 border border-[#ff4b22]/30">
-                <Award className="w-7 h-7 text-[#ff4b22]" />
+            <div
+              className="bg-[#141414] border border-[#ff4b22]/40 rounded-2xl p-7 max-w-md w-full text-left shadow-2xl relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 rounded-xl bg-[#ff4b22]/15 border border-[#ff4b22]/30">
+                  <Award className="w-7 h-7 text-[#ff4b22]" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white">
+                    {selectedCert.title}
+                  </h3>
+                  <p className="text-xs text-[#ff4b22] font-semibold">
+                    {selectedCert.issuer}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-display text-lg font-bold text-white">
-                  {selectedCert.title}
-                </h3>
-                <p className="text-xs text-[#ff4b22] font-semibold">
-                  {selectedCert.issuer}
-                </p>
-              </div>
-            </div>
 
-            <div className="space-y-3 text-xs sm:text-sm text-white/70 py-2 border-y border-white/10 my-4">
-              <div className="flex justify-between">
-                <span className="text-white/40">Credential Status:</span>
-                <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Completed
-                </span>
+              <div className="space-y-3 text-xs sm:text-sm text-white/70 py-2 border-y border-white/10 my-4">
+                <div className="flex justify-between">
+                  <span className="text-white/40">Credential Status:</span>
+                  <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Completed
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-white/40">Issued By:</span>
+                  <span className="text-white font-medium">{selectedCert.issuer}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-white/40">Recipient:</span>
+                  <span className="text-white font-medium">Karthik Venkat Bhavani Kishor</span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-white/40">Issued By:</span>
-                <span className="text-white font-medium">{selectedCert.issuer}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/40">Recipient:</span>
-                <span className="text-white font-medium">Karthik Venkat Bhavani Kishor</span>
-              </div>
-            </div>
 
-            <div className="flex justify-end gap-3 pt-2">
-              <button
-                onClick={() => setSelectedCert(null)}
-                className="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-semibold"
-              >
-                Close
-              </button>
+              <div className="flex justify-end gap-3 pt-2">
+                <button
+                  onClick={() => setSelectedCert(null)}
+                  className="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-semibold"
+                >
+                  Close
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </section>
   );
 };

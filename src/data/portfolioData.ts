@@ -196,8 +196,8 @@ export const educationList: EducationItem[] = [
     id: "intermediate",
     degree: "Intermediate (MPC)",
     institution: "Vidya Vikas Junior College",
-    details: "Completed: 2021",
-    year: "Completed: 2021",
+    details: "Completed: 2022",
+    year: "Completed: 2022",
     highlights: [
       "Specialized in Mathematics, Physics, and Chemistry (MPC).",
       "Built strong foundation in quantitative analytics, logic and problem solving."

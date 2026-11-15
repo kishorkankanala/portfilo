@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { ResumeModal } from './components/ResumeModal';
 import { Toast } from './components/Toast';
+import { ScrollReveal } from './components/ScrollReveal';
 import { Project } from './types';
 
 export default function App() {
@@ -105,18 +106,30 @@ export default function App() {
 
       {/* Main Sections Container */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-        <About />
-        <Education />
-        <Skills />
+        <ScrollReveal>
+          <About />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Education />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Skills />
+        </ScrollReveal>
         <Projects
           onSelectProject={(project) => setSelectedProject(project)}
         />
-        <Certifications />
-        <Contact onShowToast={showToast} />
+        <ScrollReveal>
+          <Certifications />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Contact onShowToast={showToast} />
+        </ScrollReveal>
       </main>
 
       {/* Footer */}
-      <Footer onScrollToTop={handleScrollToTop} />
+      <ScrollReveal threshold={0.05} rootMargin="0px 0px -20px 0px">
+        <Footer onScrollToTop={handleScrollToTop} />
+      </ScrollReveal>
 
       {/* Modals & Toast */}
       <ProjectModal
